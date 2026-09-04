@@ -1,19 +1,23 @@
+#A queue is a first in first out data structure
 Queue = []
 
+#When an item is enqueued it goes the back of the queue
 def enqueue(item):
-    pass
+    Queue.append(item)
 
+#When an item is dequeued the item at the front of the queue is removed
 def dequeue():
-    pass
+    Queue.pop(0)
 
 def peek():
-    pass
+    print(Queue[0])
 
 def size():
-    pass
+    print(len(Queue))
 
 def IsEmpty():
-    pass
+    if len(Queue) == 0:
+        print("Queue is empty")
 
 menu = ("1. Enqueue \n"
            "2. dequeue \n" 
