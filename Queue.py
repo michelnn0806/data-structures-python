@@ -4,8 +4,16 @@ Queue = []
 
 #When an item is enqueued it goes the back of the queue
 def enqueue():
-    number = int(input("Enter a number: "))
-    Queue.append(number)
+
+    while True:
+        try:
+            number = int(input("Enter a number: "))
+            Queue.append(number)
+            break
+
+        except ValueError:
+            print("Please enter a number")
+
 
 #When an item is dequeued the item at the front of the queue is removed
 def dequeue():
@@ -35,7 +43,16 @@ while again:
     print(menu)
     print(Queue)
 
-    option = int(input("Enter your choice: "))
+    while True:
+        try:
+            option = int(input("Enter your choice: "))
+            if 1 <= option <= 5:
+                break
+            else:
+                print("Only numbers between 1 and 5 should be entered")
+
+        except ValueError:
+            print("Please enter a number")
 
     if option == 1:
         enqueue()
